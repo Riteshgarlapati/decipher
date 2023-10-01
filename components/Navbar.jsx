@@ -103,7 +103,7 @@ const Navbar = () => {
                     {session ? (
                         <button
                             type="button"
-                            className="p-2 text-sm text-white bg-bblue-200 rounded-xl"
+                            className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
                             onClick={() => signOut()}
                         >
                             Sign out
@@ -112,7 +112,7 @@ const Navbar = () => {
                         <Link href={"/"}>
                             <button
                                 type="button"
-                                className="p-2 text-sm text-white bg-bblue-200 rounded-xl"
+                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
                             >
                                 Login
                             </button>

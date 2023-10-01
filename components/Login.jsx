@@ -31,23 +31,28 @@ function Login() {
 
     return (
         <div className="flex flex-col items-center justify-center w-full h-[calc(100vh-4rem)] py-0 mx-auto my-0 justify-items-center">
-            <form className="w-4/5 lg:w-3/5 md:w-3/5">
+            <form className="w-4/5 px-6 py-3 border-none lg:w-2/5 md:w-3/5 glass">
+                <h2 className="py-4 text-3xl text-center shimmerb text-bblue-200">
+                    Login
+                </h2>
                 <div>
-                    <label>Email:</label>
+                    <label className="my-1 text-xl text-bblue-200 ">
+                        Email:
+                    </label>
                     <input
                         type="email"
                         value={email}
-                        className="w-full px-4 py-2 border rounded-lg shadow-md form-control md:text-xl bg-Manga-200 bg-opacity-20 border-bgold-200"
+                        className="w-full px-4 py-2 my-1 border rounded-lg shadow-md outline-none form-control bg-void border-bgold-200"
                         onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="justify-center w-full my-3 ">
-                    <label>Password:</label>
-                    <div className="flex">
+                    <label className="text-xl text-bblue-200">Password:</label>
+                    <div className="flex justify-between w-full py-2 pl-4 pr-2 my-1 border rounded-lg shadow-md form-control bg-void border-bgold-200">
                         <input
                             type={isPasswordVisible ? "text" : "password"}
                             value={password}
-                            className="w-full px-4 py-2 border rounded-lg shadow-md form-control md:text-xl bg-Manga-200 bg-opacity-20 border-bgold-200"
+                            className="w-full outline-none bg-void"
                             onChange={(e) => setPassword(e.target.value)}
                             onKeyDown={handleKeyPress}
                         />
@@ -59,27 +64,20 @@ function Login() {
                             }
                         >
                             {isPasswordVisible ? (
-                                <EyeIcon className="w-10 h-10 text-gray-500" />
+                                <EyeIcon className="w-6 h-5 text-gray-500" />
                             ) : (
-                                <EyeSlashIcon className="w-10 h-10 text-gray-500" />
+                                <EyeSlashIcon className="w-6 h-5 text-gray-500" />
                             )}
                         </button>
                     </div>
                 </div>
-                <div className="flex justify-center w-full my-3 ">
+                <div className="flex justify-center w-full">
                     <button
                         type="button"
-                        className="px-4 py-2 text-xl duration-300 border rounded-lg cursor-pointer bg-bblue-200 text-void border-bgold-200 hover:bg-bblue-300"
+                        className="px-4 py-2 my-2 text-xl font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
                         onClick={handleLogin}
                     >
                         Login
-                    </button>
-                    <button
-                        type="button"
-                        className="text-sm bg-[#8e4296] text-white p-2 rounded-xl"
-                        onClick={() => signOut()}
-                    >
-                        Sign out
                     </button>
                 </div>
             </form>
