@@ -30,7 +30,7 @@ function Login() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-screen py-0 mx-auto my-0 justify-items-center">
+        <div className="flex flex-col items-center justify-center w-full h-[calc(100vh-4rem)] py-0 mx-auto my-0 justify-items-center">
             <form className="w-4/5 lg:w-3/5 md:w-3/5">
                 <div>
                     <label>Email:</label>
