@@ -1,0 +1,127 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import Image from "next/image"; // Import Image from Next.js
+import { signOut, useSession } from "next-auth/react";
+
+const Navbar = () => {
+    const [isSticky, setIsSticky] = useState(false);
+
+    const { data: session, status } = useSession();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            setIsSticky(scrollTop > 0);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    return (
+        <>
+            <div className="flex justify-center w-full px-4 py-1 bg-void text-md text-bblue-200">
+                <span className="shimmer">Learn. Code. Share.</span>
+            </div>
+            <div
+                className={`${
+                    isSticky
+                        ? "sticky top-0 h-16 backdrop-blur-3xl bg-[#0f0913] bg-opacity-70 shadow-md navbar-ios"
+                        : "bg-void"
+                } left-0 h-16 py-2 px-4 flex justify-between items-center w-full transition-all duration-300 z-10 text-2xl `}
+                style={{
+                    "z-index": 2,
+                }}
+            >
+                <div className="flex items-center">
+                    <Link href="/" className="flex items-center ">
+                        <Image
+                            src="/images/hf10iconCrop.png" // Replace with your logo image path
+                            width={51}
+                            height={45}
+                            alt="Hf10 Logo"
+                            style={{ padding: 0, scale: 1.0 }}
+                        />
+                        <div className="w-[1px] h-5 bg-[#efedef] mx-2"></div>
+                        <div className="relative w-10 h-10">
+                            {isSticky ? (
+                                <div>
+                                    <Image
+                                        src="/images/LogoCOSCRing.svg" // Replace with your logo image path
+                                        layout="fill"
+                                        alt="Sticky Logo"
+                                        style={{
+                                            transition:
+                                                "opacity 0.3s ease-in-out",
+                                            opacity: 1,
+                                        }}
+                                    />
+                                    <Image
+                                        src="/images/LogoCOSC.png" // Replace with your logo image path
+                                        layout="fill"
+                                        alt="Normal Logo"
+                                        style={{
+                                            transition:
+                                                "opacity 0.3s ease-in-out",
+                                            opacity: 0,
+                                        }}
+                                    />
+                                </div>
+                            ) : (
+                                <div>
+                                    <Image
+                                        src="/images/LogoCOSCRing.svg" // Replace with your logo image path
+                                        layout="fill"
+                                        alt="Sticky Logo"
+                                        style={{
+                                            transition:
+                                                "opacity 0.3s ease-in-out",
+                                            opacity: 0,
+                                        }}
+                                    />
+                                    <Image
+                                        src="/images/LogoCOSC.png" // Replace with your logo image path
+                                        layout="fill"
+                                        alt="Normal Logo"
+                                        style={{
+                                            transition:
+                                                "opacity 0.3s ease-in-out",
+                                            opacity: 1,
+                                        }}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    </Link>
+                </div>
+                <div className="">
+                    {session ? (
+                        <button
+                            type="button"
+                            className="p-2 text-sm text-white bg-bblue-200 rounded-xl"
+                            onClick={() => signOut()}
+                        >
+                            Sign out
+                        </button>
+                    ) : (
+                        <Link href={"/"}>
+                            <button
+                                type="button"
+                                className="p-2 text-sm text-white bg-bblue-200 rounded-xl"
+                            >
+                                Login
+                            </button>
+                        </Link>
+                    )}
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Navbar;
