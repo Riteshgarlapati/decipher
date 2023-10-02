@@ -61,7 +61,7 @@ function ProblemStatement({ Id, statement, description }) {
     return (
         <div
             className={`${
-                count >= 5 ? "cursor-not-allowed blur-[1px]" : "cursor-default"
+                count >= 5 ? "cursor-not-allowed blur-[2px]" : "cursor-default"
             } flex flex-col w-5/6 gap-1 p-6 mx-auto shadow-md outline-border bg-none rounded-3xl relative`}
         >
             <div className={" flex gap-4 font-bold md:text-xl text-bblue-200 "}>
