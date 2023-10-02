@@ -10,7 +10,7 @@ const jetBrains_mono = JetBrains_Mono({
 });
 
 export const metadata = {
-    title: "Hacktoberfest'23 | COSC",
+    title: "Hacktoberfest'23 | Problem Selection  | COSC",
     description: "CBIT Hacktoberfest Hackathon 2023",
 };
 
