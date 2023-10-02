@@ -4,15 +4,18 @@
 
 import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
+import { firestore } from "../firebase";
 import {
     ref,
     // transaction as dbTransaction,
     onValue,
     off,
+    runTransaction,
 } from "firebase/database";
+import { doc, setDoc } from "firebase/firestore";
 
-function ProblemStatement({ Id, statement, description, teamId }) {
-    console.log(teamId);
+function ProblemStatement({ Id, statement, description, user }) {
+    const teamId = user.teamId;
     const [count, setCount] = useState(0);
     const [selected, setSelected] = useState(false);
     const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
@@ -37,25 +40,27 @@ function ProblemStatement({ Id, statement, description, teamId }) {
         setConfirmationModalOpen(true); // Open the confirmation modal
     };
 
-    const confirmSelection = () => {
-        const problemRef = ref(database, `ProblemStatements/${Id}`);
-        const transaction = (problem) => {
-            if (problem) {
-                if (problem.count < 5 && !problem.teamIds?.includes(teamId)) {
-                    problem.count++;
-                    problem.teamIds = problem.teamIds || [];
-                    problem.teamIds.push(teamId); // Replace teamId with the actual team ID
+    const confirmSelection = async () => {
+        //realtime db update
+        const psRef = ref(database, `/ProblemStatements/${Id}`);
+        runTransaction(psRef, (ps) => {
+            if (ps) {
+                if (!ps.teamIds) {
+                    ps.teamIds = [];
+                }
+
+                if (ps.count <= 4 && !ps.teamIds.includes(teamId)) {
+                    ps.teamIds.push(teamId);
+                    ps.count++; // Increment count only if it's less than or equal to 5.
                 }
             }
-            return problem;
-        };
-        dbTransaction(problemRef, transaction)
-            .then(() => {
-                console.log("Data updated successfully");
-            })
-            .catch((error) => {
-                console.error("Error updating data:", error);
-            });
+            return ps;
+        });
+
+        //firestore update
+        const docRef = doc(firestore, "users", user.email);
+        await setDoc(docRef, { selectedPS: Id }, { merge: true });
+        location.reload();
     };
 
     return (

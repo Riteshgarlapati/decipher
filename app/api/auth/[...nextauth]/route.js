@@ -41,11 +41,7 @@ const handler = NextAuth({
     secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
     callbacks: {
         async session({ session, user, token }) {
-            const details = await fetchDocumentByField(
-                "users",
-                "email",
-                "saikirangoud.matta@gmail.com"
-            );
+            const details = await fetchDocumentByField(session.user.email);
             session.user = {
                 ...session.user,
                 ...details,

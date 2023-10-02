@@ -6,7 +6,7 @@ import { firestore } from "./firebase";
 // Initialize Firebase (make sure you've already initialized Firebase as shown in the previous response)
 
 // Function to fetch a document by a specific field
-export async function fetchDocumentByField(collectionName, fieldName, value) {
+export async function fetchDocumentByField(value) {
     // Reference to the Firestore collection
     const docRef = doc(firestore, "users", value);
     try {
