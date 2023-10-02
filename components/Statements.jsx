@@ -44,7 +44,7 @@ function Statements() {
     return (
         <>
             {session.user.selectedPS == "0" ? (
-                <div className="flex flex-col min-h-screen gap-8 pb-20">
+                <div className="flex flex-col gap-8 pb-20">
                     <h1 className="mx-auto mt-8 text-xl md:text-3xl shimmerb">
                         Problem Statement Selection
                     </h1>
@@ -59,8 +59,8 @@ function Statements() {
                     ))}
                 </div>
             ) : (
-                <div className="flex justify-center w-full h-full">
-                    <div className="px-8 py-4 my-40 glass h-min">
+                <div className="flex justify-center w-full h-[calc(100vh-4rem)]">
+                    <div className="px-8 py-4 mx-4 my-40 glass h-min">
                         <span className="text-2xl text-bblue-200">
                             You -{" "}
                             <span className=" shimmer">

@@ -64,11 +64,11 @@ function ProblemStatement({ Id, statement, description, user }) {
     };
 
     return (
-        <div className="relative ">
+        <div className="relative z-0 flex justify-center ">
             <div
                 className={` ${
                     count >= 5 ? "inline " : "hidden"
-                } text-bred-200 text-xl md:text-2xl font-bold z-10 backdrop-blur-[1px] cursor-not-allowed absolute flex items-center justify-center w-full h-full`}
+                } text-bred-200 text-xl md:text-2xl font-bold z-10 backdrop-blur-[1px] cursor-not-allowed absolute  w-5/6 flex items-center justify-center  h-full`}
             >
                 <span className="px-4 py-2 border shadow-md rounded-xl bg-void border-bred-200">
                     {" "}

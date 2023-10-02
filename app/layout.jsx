@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
 import Head from "next/head";
@@ -24,10 +23,7 @@ export default function RootLayout({ children }) {
                 />
             </Head>
             <body className={jetBrains_mono.className}>
-                <SessionProvider>
-                    <Navbar />
-                    {children}
-                </SessionProvider>
+                <SessionProvider>{children}</SessionProvider>
             </body>
         </html>
     );

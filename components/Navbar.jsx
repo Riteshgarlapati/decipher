@@ -5,10 +5,8 @@ import Link from "next/link";
 import Image from "next/image"; // Import Image from Next.js
 import { signOut, useSession } from "next-auth/react";
 
-const Navbar = () => {
+const Navbar = ({ session }) => {
     const [isSticky, setIsSticky] = useState(false);
-
-    const { data: session, status } = useSession();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,7 +23,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="flex justify-center w-full px-4 py-1 bg-void text-md text-bblue-200">
+            <div className="z-20 flex justify-center w-full px-4 py-1 bg-void text-md text-bblue-200">
                 <span className="shimmer">Learn. Code. Share.</span>
             </div>
             <div
@@ -35,12 +33,11 @@ const Navbar = () => {
                         : "bg-void"
                 } left-0 h-16 py-2 px-4 flex justify-between items-center w-full transition-all duration-300 z-10 text-2xl `}
                 style={{
-                    "z-index": 2,
-                }}>
+                    "z-index": 20,
+                }}
+            >
                 <div className="flex items-center">
-                    <Link
-                        href="/"
-                        className="flex items-center ">
+                    <Link href="/" className="flex items-center ">
                         <Image
                             src="/images/hf10iconCrop.png" // Replace with your logo image path
                             width={51}
@@ -105,14 +102,16 @@ const Navbar = () => {
                         <button
                             type="button"
                             className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
-                            onClick={() => signOut()}>
+                            onClick={() => signOut()}
+                        >
                             Sign out
                         </button>
                     ) : (
                         <Link href={"/"}>
                             <button
                                 type="button"
-                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200">
+                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
+                            >
                                 Login
                             </button>
                         </Link>
