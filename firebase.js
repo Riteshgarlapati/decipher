@@ -26,8 +26,22 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 // const firestore = getFirestore(app);
 const database = getDatabase(app);
+
+// export const performDatabaseTransaction = (path, transactionFunction) => {
+//     const ref = database.ref(path);
+
+//     return ref.transaction(transactionFunction)
+//       .then((result) => {
+//         console.log("Transaction result:", result);
+//       })
+//       .catch((error) => {
+//         console.error("Transaction error:", error);
+//       });
+//   };
+
+//   export default firebase;
 const auth = getAuth(app);
 if (app != null) {
     // console.log("Firebase initialized");
 }
-export { database, auth };
+export { app, database, auth };
