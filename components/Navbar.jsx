@@ -9,6 +9,7 @@ const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
 
     const { data: session, status } = useSession();
+    console.log(session?.user?.email);
 
     useEffect(() => {
         const handleScroll = () => {

@@ -18,23 +18,17 @@ function ProblemStatement({ Id, statement, description }) {
     const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
     useEffect(() => {
-        console.log(Id);
-        console.log(1);
         const problemRef = ref(database, `ProblemStatements/${Id}`);
-        console.log(2);
-        console.log(problemRef);
-        onValue(problemRef, (snapshot) => {
-            console.log(3);
 
+        onValue(problemRef, (snapshot) => {
             const problemData = snapshot.val();
-            console.log(problemData);
+
             if (problemData) {
                 setCount(problemData.count);
             }
         });
 
         return () => {
-            console.log(4);
             off(problemRef);
         };
     }, [Id, statement]);
@@ -44,7 +38,6 @@ function ProblemStatement({ Id, statement, description }) {
     };
 
     const confirmSelection = () => {
-        console.log(5);
         const problemRef = ref(database, `ProblemStatements/${id}`);
         const transaction = (problem) => {
             if (problem) {
