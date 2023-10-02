@@ -11,10 +11,10 @@ import {
     off,
 } from "firebase/database";
 
-function ProblemStatement({ Id, statement, description }) {
+function ProblemStatement({ Id, statement, description, teamId }) {
+    console.log(teamId);
     const [count, setCount] = useState(0);
     const [selected, setSelected] = useState(false);
-    const TEAM_ID = 1;
     const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
     useEffect(() => {
@@ -38,13 +38,13 @@ function ProblemStatement({ Id, statement, description }) {
     };
 
     const confirmSelection = () => {
-        const problemRef = ref(database, `ProblemStatements/${id}`);
+        const problemRef = ref(database, `ProblemStatements/${Id}`);
         const transaction = (problem) => {
             if (problem) {
-                if (problem.count < 5 && !problem.teamIds?.includes(TEAM_ID)) {
+                if (problem.count < 5 && !problem.teamIds?.includes(teamId)) {
                     problem.count++;
                     problem.teamIds = problem.teamIds || [];
-                    problem.teamIds.push(TEAM_ID); // Replace TEAM_ID with the actual team ID
+                    problem.teamIds.push(teamId); // Replace teamId with the actual team ID
                 }
             }
             return problem;
@@ -65,7 +65,7 @@ function ProblemStatement({ Id, statement, description }) {
                     count >= 5 ? "inline " : "hidden"
                 } text-bred-200 text-xl md:text-2xl font-bold z-10 backdrop-blur-[1px] cursor-not-allowed absolute flex items-center justify-center w-full h-full`}
             >
-                <span className="px-4 py-2 shadow-md rounded-xl bg-void">
+                <span className="px-4 py-2 border shadow-md rounded-xl bg-void border-bred-200">
                     {" "}
                     Max selections reached
                 </span>

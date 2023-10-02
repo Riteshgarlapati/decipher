@@ -1,8 +1,8 @@
+"use client";
 // pages/index.js
 import React from "react";
 import ProblemStatement from "./PScard";
-
-const TEAM_ID = 1; // Replace with the actual team ID
+import { useSession } from "next-auth/react";
 
 const problemStatements = [
     {
@@ -21,6 +21,8 @@ const problemStatements = [
 ];
 
 function Statements() {
+    const { data: session, status } = useSession();
+
     return (
         <div className="flex flex-col min-h-screen gap-8">
             <h1 className="mx-auto mt-8 text-xl md:text-3xl shimmerb">
@@ -32,6 +34,7 @@ function Statements() {
                     Id={problem.Id}
                     description={problem.description}
                     statement={problem.statement}
+                    teamId={session.user.teamId}
                 />
             ))}
         </div>

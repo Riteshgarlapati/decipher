@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase";
+import { fetchDocumentByField } from "@/functions";
 
 const handler = NextAuth({
     // Configure one or more authentication providers
@@ -38,6 +39,21 @@ const handler = NextAuth({
         strategy: "jwt",
     },
     secret: process.env.NEXT_PUBLIC_NEXTAUTH_SECRET,
+    callbacks: {
+        async session({ session, user, token }) {
+            const details = await fetchDocumentByField(
+                "users",
+                "email",
+                "saikirangoud.matta@gmail.com"
+            );
+            session.user = {
+                ...session.user,
+                ...details,
+            };
+
+            return session;
+        },
+    },
 });
 
 export { handler as GET, handler as POST };

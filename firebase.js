@@ -24,7 +24,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-// const firestore = getFirestore(app);
+const firestore = getFirestore(app);
 const database = getDatabase(app);
 
 // export const performDatabaseTransaction = (path, transactionFunction) => {
@@ -44,4 +44,4 @@ const auth = getAuth(app);
 if (app != null) {
     // console.log("Firebase initialized");
 }
-export { app, database, auth };
+export { app, database, auth, firestore };
