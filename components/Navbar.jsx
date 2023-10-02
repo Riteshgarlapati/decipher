@@ -9,8 +9,9 @@ const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
 
     const { data: session, status } = useSession();
+    console.log(session);
     const teamNumber = session?.user?.email.match(/team(\d+)/);
-    console.log(teamNumber[1]);
+    // console.log(teamNumber[1]);
 
     useEffect(() => {
         const handleScroll = () => {
