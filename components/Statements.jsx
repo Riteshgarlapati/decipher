@@ -14,6 +14,7 @@ function Statements() {
     const [selectedProblemId, setSelectedProblemId] = useState(null);
     const [selectedPSFromRealtimeDB, setSelectedPSFromRealtimeDB] =
         useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         // Real-time database listener to fetch selectedPS
@@ -75,6 +76,9 @@ function Statements() {
             // Handle any errors that occur during database updates
             console.error("Error confirming selection:", error);
             // You can display an error message or take appropriate action here
+            setError(
+                "An error occurred while confirming the selection. Please try again."
+            );
         }
     };
 
@@ -156,6 +160,11 @@ function Statements() {
                             </span>
                             ?
                         </p>
+                        {error && (
+                            <p className="text-lg font-bold text-bred-200">
+                                {error}
+                            </p>
+                        )}
                         <div className="flex justify-center gap-2">
                             <button
                                 onClick={() => setConfirmationModalOpen(false)}
