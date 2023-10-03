@@ -128,9 +128,9 @@ function Statements() {
                     ))}
                 </div>
             ) : (
-                <div className="flex justify-center w-full h-[calc(100vh-4rem)]">
-                    <div className="px-8 py-4 mx-4 my-40 glass h-min">
-                        <span className="text-2xl text-bblue-200">
+                <div className="flex justify-center w-5/6 h-[calc(100vh-4rem)] mx-auto">
+                    <div className="flex flex-col items-center justify-center gap-4 px-8 py-4 mx-4 my-40 glass h-min">
+                        <span className="text-2xl text-bblue-200 ">
                             You -{" "}
                             <span className="shimmer">
                                 Team {session.user.teamId}
@@ -140,6 +140,39 @@ function Statements() {
                                 {selectedPSFromRealtimeDB}
                             </span>
                         </span>
+                        {(() => {
+                            const selectedProblem = problemStatements.find(
+                                (problem) =>
+                                    problem.Id === selectedPSFromRealtimeDB
+                            );
+
+                            if (selectedProblem) {
+                                return (
+                                    <div className="relative flex flex-col w-full gap-1 p-6 mx-auto shadow-md outline-border bg-none rounded-3xl">
+                                        <div className="flex gap-4 font-bold md:text-xl text-bblue-200">
+                                            <span className="text-bgold-200">
+                                                {selectedPSFromRealtimeDB}
+                                            </span>
+                                            <span>
+                                                {selectedProblem.statement}
+                                            </span>
+                                        </div>
+                                        <p className="text-xs leading-5 md:text-base">
+                                            <span className="text-base md:text-xl text-bred-200">
+                                                Description:{" "}
+                                            </span>
+                                            {selectedProblem.description}
+                                        </p>
+                                    </div>
+                                );
+                            } else {
+                                return (
+                                    <span className="text-2xl text-bblue-200">
+                                        Problem Statement not found.
+                                    </span>
+                                );
+                            }
+                        })()}
                     </div>
                 </div>
             )}
