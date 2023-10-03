@@ -1,24 +1,14 @@
-"use client";
-
-// components/ProblemStatement.js
+// ProblemStatement.js
 
 import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
 import { firestore } from "../firebase";
-import {
-    ref,
-    // transaction as dbTransaction,
-    onValue,
-    off,
-    runTransaction,
-} from "firebase/database";
+import { ref, onValue, off, runTransaction } from "firebase/database";
 import { doc, setDoc } from "firebase/firestore";
 
-function ProblemStatement({ Id, statement, description, user }) {
+function ProblemStatement({ Id, statement, description, user, onSelect }) {
     const teamId = user.teamId;
     const [count, setCount] = useState(0);
-    const [selected, setSelected] = useState(false);
-    const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
 
     useEffect(() => {
         const problemRef = ref(database, `ProblemStatements/${Id}`);
@@ -37,34 +27,11 @@ function ProblemStatement({ Id, statement, description, user }) {
     }, [Id, statement]);
 
     const handleSelect = () => {
-        setConfirmationModalOpen(true); // Open the confirmation modal
-    };
-
-    const confirmSelection = async () => {
-        //realtime db update
-        const psRef = ref(database, `/ProblemStatements/${Id}`);
-        runTransaction(psRef, (ps) => {
-            if (ps) {
-                if (!ps.teamIds) {
-                    ps.teamIds = [];
-                }
-
-                if (ps.count <= 4 && !ps.teamIds.includes(teamId)) {
-                    ps.teamIds.push(teamId);
-                    ps.count++; // Increment count only if it's less than or equal to 5.
-                }
-            }
-            return ps;
-        });
-
-        //firestore update
-        const docRef = doc(firestore, "users", user.email);
-        await setDoc(docRef, { selectedPS: Id }, { merge: true });
-        location.reload();
+        onSelect(Id); // Call the parent's onSelect callback with the selected problem Id
     };
 
     return (
-        <div className="relative z-0 flex justify-center ">
+        <div className="relative z-0 flex justify-center">
             <div
                 className={` ${
                     count >= 5 ? "inline " : "hidden"
@@ -98,49 +65,14 @@ function ProblemStatement({ Id, statement, description, user }) {
                     </span>
                     {description}
                 </p>
-                {selected ? (
-                    <p>Selected</p>
-                ) : (
-                    <>
-                        <button
-                            onClick={handleSelect}
-                            className="px-4 py-2 mx-auto mt-2 text-xl font-bold duration-300 border rounded-lg cursor-pointer disabled:cursor-not-allowed disabled:hover:text-bblue-200 w-min text-bblue-200 border-bgold-200 hover:text-bgold-200"
-                            disabled={count >= 5}
-                        >
-                            Select
-                        </button>
-                        {isConfirmationModalOpen && (
-                            <div className="fixed inset-0 z-50 flex items-center justify-center bg-Manga-100 bg-opacity-5 backdrop-blur">
-                                <div className="flex flex-col w-1/2 gap-2 p-4 bg-white rounded-lg shadow-lg modal-container glass">
-                                    <p className="text-xl text-bblue-200">
-                                        Are you sure you want to select the
-                                        problem statement{" "}
-                                        <span className="text-2xl font-bold text-bgold-200">
-                                            {Id}
-                                        </span>
-                                        ?
-                                    </p>
-                                    <div className="flex justify-center gap-2">
-                                        <button
-                                            onClick={() =>
-                                                setConfirmationModalOpen(false)
-                                            }
-                                            className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bred-200 border-bgold-200 hover:text-bgold-200"
-                                        >
-                                            No
-                                        </button>
-                                        <button
-                                            onClick={confirmSelection}
-                                            className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-void border-bgold-200 bg-bblue-200 hover:bg-bblue-100"
-                                        >
-                                            Yes
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-                    </>
-                )}
+
+                <button
+                    onClick={handleSelect}
+                    className="px-4 py-2 mx-auto mt-2 text-xl font-bold duration-300 border rounded-lg cursor-pointer disabled:cursor-not-allowed disabled:hover:text-bblue-200 w-min text-bblue-200 border-bgold-200 hover:text-bgold-200"
+                    disabled={count >= 5}
+                >
+                    Select
+                </button>
             </div>
         </div>
     );
