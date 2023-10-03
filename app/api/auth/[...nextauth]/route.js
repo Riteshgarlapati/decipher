@@ -7,7 +7,7 @@ import { fetchDocumentByField } from "@/functions";
 const handler = NextAuth({
     // Configure one or more authentication providers
     pages: {
-        signIn: "/login",
+        signIn: "/",
     },
     providers: [
         CredentialsProvider({

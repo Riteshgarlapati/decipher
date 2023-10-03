@@ -2,12 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { database } from "../firebase";
-import { firestore } from "../firebase";
-import { ref, onValue, off, runTransaction } from "firebase/database";
-import { doc, setDoc } from "firebase/firestore";
+import { ref, onValue, off } from "firebase/database";
 
-function ProblemStatement({ Id, statement, description, user, onSelect }) {
-    const teamId = user.teamId;
+function ProblemStatement({ Id, statement, description, onSelect }) {
     const [count, setCount] = useState(0);
 
     useEffect(() => {

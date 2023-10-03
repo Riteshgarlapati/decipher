@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 import ProblemStatement from "./PScard";
 import { useSession } from "next-auth/react";
 import { off, onValue, ref, runTransaction, set } from "firebase/database";
-import { doc, setDoc } from "firebase/firestore";
-import { database, firestore } from "@/firebase";
+import { database } from "@/firebase";
 
 const problemStatements = [
     {
@@ -124,7 +123,6 @@ function Statements() {
                             Id={problem.Id}
                             description={problem.description}
                             statement={problem.statement}
-                            user={session.user}
                             onSelect={handleSelect}
                         />
                     ))}
