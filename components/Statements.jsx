@@ -1,9 +1,9 @@
 // Statements.js
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProblemStatement from "./PScard";
 import { useSession } from "next-auth/react";
-import { ref, runTransaction } from "firebase/database";
+import { off, onValue, ref, runTransaction, set } from "firebase/database";
 import { doc, setDoc } from "firebase/firestore";
 import { database, firestore } from "@/firebase";
 
@@ -45,6 +45,25 @@ function Statements() {
     const { data: session } = useSession();
     const [isConfirmationModalOpen, setConfirmationModalOpen] = useState(false);
     const [selectedProblemId, setSelectedProblemId] = useState(null);
+    const [selectedPSFromRealtimeDB, setSelectedPSFromRealtimeDB] =
+        useState(null);
+
+    useEffect(() => {
+        // Real-time database listener to fetch selectedPS
+        if (session.user && session.user.teamId) {
+            const teamId = session.user.teamId;
+            const selectedPSRef = ref(database, `Teams/${teamId}/S`);
+
+            onValue(selectedPSRef, (snapshot) => {
+                const selectedPS = snapshot.val();
+                setSelectedPSFromRealtimeDB(selectedPS);
+            });
+
+            return () => {
+                off(selectedPSRef);
+            };
+        }
+    }, [session.user]);
 
     const handleSelect = (problemId) => {
         setSelectedProblemId(problemId);
@@ -52,12 +71,11 @@ function Statements() {
     };
 
     const confirmSelection = async (problemId) => {
-        // Perform database updates here (realtime db and firestore) based on the selected problemId
         try {
             console.log(1);
             // Realtime database update
             const psRef = ref(database, `/ProblemStatements/${problemId}`);
-            runTransaction(psRef, (ps) => {
+            await runTransaction(psRef, (ps) => {
                 if (ps) {
                     if (!ps.teamIds) {
                         ps.teamIds = [];
@@ -74,15 +92,18 @@ function Statements() {
                 return ps;
             });
 
+            const teamPSRef = ref(database, `/Teams/${session.user.teamId}/S`);
+            await set(teamPSRef, problemId);
+
             // Firestore update
-            const docRef = doc(firestore, "users", session.user.email);
-            await setDoc(docRef, { selectedPS: problemId }, { merge: true });
+            // const docRef = doc(firestore, "users", session.user.email);
+            // await setDoc(docRef, { selectedPS: problemId }, { merge: true });
 
             // Close the modal and perform any necessary actions
             setConfirmationModalOpen(false);
 
             // You can also trigger a page reload or any other actions here if needed
-            location.reload();
+            // location.reload();
         } catch (error) {
             // Handle any errors that occur during database updates
             console.error("Error confirming selection:", error);
@@ -92,7 +113,7 @@ function Statements() {
 
     return (
         <>
-            {session.user.selectedPS === "0" ? (
+            {selectedPSFromRealtimeDB === "0" ? (
                 <div className="flex flex-col gap-8 pb-20">
                     <h1 className="mx-auto mt-8 text-xl md:text-3xl shimmerb">
                         Problem Statement Selection
@@ -118,7 +139,7 @@ function Statements() {
                             </span>
                             , have already chosen{" "}
                             <span className="font-bold text-bgold-200 shimmer">
-                                {session.user.selectedPS}
+                                {selectedPSFromRealtimeDB}
                             </span>
                         </span>
                     </div>
