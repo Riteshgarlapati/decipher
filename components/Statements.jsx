@@ -25,6 +25,7 @@ function Statements() {
             onValue(selectedPSRef, (snapshot) => {
                 const selectedPS = snapshot.val();
                 setSelectedPSFromRealtimeDB(selectedPS);
+                console.log(selectedPSFromRealtimeDB);
             });
 
             return () => {
@@ -36,6 +37,11 @@ function Statements() {
     const handleSelect = (problemId) => {
         setSelectedProblemId(problemId);
         setConfirmationModalOpen(true);
+    };
+
+    const handleModalClose = () => {
+        setConfirmationModalOpen(false);
+        setError(null);
     };
 
     const confirmSelection = async (problemId) => {
@@ -55,14 +61,20 @@ function Statements() {
                     ) {
                         ps.teamIds.push(session.user.teamId);
                         ps.count++; // Increment count only if it's less than or equal to 5.
+                    } else {
+                        throw new Error(
+                            "The problem might have reached it's limit, choose another problem"
+                        );
                     }
                 }
                 return ps;
+            }).then(async () => {
+                const teamPSRef = ref(
+                    database,
+                    `/Teams/${session.user.teamId}/S`
+                );
+                await set(teamPSRef, problemId);
             });
-
-            const teamPSRef = ref(database, `/Teams/${session.user.teamId}/S`);
-            await set(teamPSRef, problemId);
-
             // Firestore update
             // const docRef = doc(firestore, "users", session.user.email);
             // await setDoc(docRef, { selectedPS: problemId }, { merge: true });
@@ -76,15 +88,13 @@ function Statements() {
             // Handle any errors that occur during database updates
             console.error("Error confirming selection:", error);
             // You can display an error message or take appropriate action here
-            setError(
-                "An error occurred while confirming the selection. Please try again."
-            );
+            setError(error);
         }
     };
 
     return (
         <>
-            {selectedPSFromRealtimeDB === "0" ? (
+            {selectedPSFromRealtimeDB == "0" ? (
                 <div className="flex flex-col gap-8 pb-20">
                     <h1 className="mx-auto mt-8 text-xl md:text-3xl shimmerb">
                         Problem Statement Selection
@@ -167,7 +177,7 @@ function Statements() {
                         )}
                         <div className="flex justify-center gap-2">
                             <button
-                                onClick={() => setConfirmationModalOpen(false)}
+                                onClick={handleModalClose}
                                 className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bred-200 border-bgold-200 hover:text-bgold-200"
                             >
                                 No
