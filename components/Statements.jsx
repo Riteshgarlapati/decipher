@@ -6,39 +6,7 @@ import { useSession } from "next-auth/react";
 import { off, onValue, ref, runTransaction, set } from "firebase/database";
 import { database } from "@/firebase";
 
-const problemStatements = [
-    {
-        Id: "PS1",
-        statement: "Healthcare Practice Management System.",
-        description:
-            "Create a mobile app or web app that facilitates user registration and login, enabling users to access and manage their profiles. It offers features such as appointment scheduling, secure file uploads and viewing, comprehensive treatment planning, cost estimation, and seamless billing generation for efficient healthcare practice management ",
-    },
-    {
-        Id: "PS2",
-        statement: "Hostel Management System",
-        description:
-            "Create a mobile app or web app that facilitates user registration and login, enabling users to access and manage their profiles. It offers features such as appointment scheduling, secure file uploads and viewing, comprehensive treatment planning, cost estimation, and seamless billing generation for efficient healthcare practice management ",
-    },
-    {
-        Id: "PS3",
-        statement: "Hostel Management System",
-        description:
-            "Create a mobile app or web app that facilitates user registration and login, enabling users to access and manage their profiles. It offers features such as appointment scheduling, secure file uploads and viewing, comprehensive treatment planning, cost estimation, and seamless billing generation for efficient healthcare practice management ",
-    },
-    {
-        Id: "PS4",
-        statement: "Hostel Management System",
-        description:
-            "Create a mobile app or web app that facilitates user registration and login, enabling users to access and manage their profiles. It offers features such as appointment scheduling, secure file uploads and viewing, comprehensive treatment planning, cost estimation, and seamless billing generation for efficient healthcare practice management ",
-    },
-    {
-        Id: "PS5",
-        statement: "Hostel Management System",
-        description:
-            "Create a mobile app or web app that facilitates user registration and login, enabling users to access and manage their profiles. It offers features such as appointment scheduling, secure file uploads and viewing, comprehensive treatment planning, cost estimation, and seamless billing generation for efficient healthcare practice management ",
-    },
-    // Add more problem statements...
-];
+import problemStatements from "../problemStatements.json";
 
 function Statements() {
     const { data: session } = useSession();
