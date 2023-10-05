@@ -1,5 +1,4 @@
-// Statements.js
-
+"use client";
 import React, { useEffect, useState } from "react";
 import ProblemStatement from "./PScard";
 import { useSession } from "next-auth/react";
@@ -178,16 +177,14 @@ function Statements() {
                         <div className="flex justify-center gap-2">
                             <button
                                 onClick={handleModalClose}
-                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bred-200 border-bgold-200 hover:text-bgold-200"
-                            >
+                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-bred-200 border-bgold-200 hover:text-bgold-200">
                                 No
                             </button>
                             <button
                                 onClick={() =>
                                     confirmSelection(selectedProblemId)
                                 }
-                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-void border-bgold-200 bg-bblue-200 hover:bg-bblue-100"
-                            >
+                                className="px-4 py-2 my-2 text-base font-bold duration-300 border rounded-lg cursor-pointer text-void border-bgold-200 bg-bblue-200 hover:bg-bblue-100">
                                 Yes
                             </button>
                         </div>

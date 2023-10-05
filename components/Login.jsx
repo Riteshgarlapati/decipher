@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { signIn } from "next-auth/react";
@@ -60,8 +59,7 @@ function Login() {
                             className="text-xl duration-300 border rounded-lg cursor-pointer bg-bblue-200 text-void border-bgold-200 hover:bg-bblue-300"
                             onClick={() =>
                                 setIsPasswordVisible(!isPasswordVisible)
-                            }
-                        >
+                            }>
                             {isPasswordVisible ? (
                                 <EyeIcon className="w-6 h-5 text-gray-500" />
                             ) : (
@@ -74,8 +72,7 @@ function Login() {
                     <button
                         type="button"
                         className="px-4 py-2 my-2 text-xl font-bold duration-300 border rounded-lg cursor-pointer text-bblue-200 border-bgold-200 hover:text-bgold-200"
-                        onClick={handleLogin}
-                    >
+                        onClick={handleLogin}>
                         Login
                     </button>
                 </div>

@@ -50,30 +50,24 @@ body {
 .shimmer {
     text-align: center;
     color: rgba(255, 255, 255, 0.1);
-    background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(#ad832d),
-        to(#ad832d),
-        color-stop(0.3, #fffba4)
-    );
-    background: -moz-gradient(
-        linear,
-        left top,
-        right top,
-        from(#ad832d),
-        to(#ad832d),
-        color-stop(0.3, #fffba4)
-    );
-    background: gradient(
-        linear,
-        left top,
-        right top,
-        from(#ad832d),
-        to(#ad832d),
-        color-stop(0.3, #fffba4)
-    );
+    background: -webkit-gradient(linear,
+            left top,
+            right top,
+            from(#ad832d),
+            to(#ad832d),
+            color-stop(0.3, #fffba4));
+    background: -moz-gradient(linear,
+            left top,
+            right top,
+            from(#ad832d),
+            to(#ad832d),
+            color-stop(0.3, #fffba4));
+    background: gradient(linear,
+            left top,
+            right top,
+            from(#ad832d),
+            to(#ad832d),
+            color-stop(0.3, #fffba4));
     -webkit-background-size: 70px 100%;
     -moz-background-size: 70px 100%;
     background-size: 70px 100%;
@@ -137,30 +131,24 @@ body {
 .shimmerb {
     text-align: center;
     color: rgba(255, 255, 255, 0.1);
-    background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(#33b6d8),
-        to(#33b6d8),
-        color-stop(0.3, #b2f3e0)
-    );
-    background: -moz-gradient(
-        linear,
-        left top,
-        right top,
-        from(#33b6d8),
-        to(#33b6d8),
-        color-stop(0.3, #b2f3e0)
-    );
-    background: gradient(
-        linear,
-        left top,
-        right top,
-        from(#33b6d8),
-        to(#33b6d8),
-        color-stop(0.3, #b2f3e0)
-    );
+    background: -webkit-gradient(linear,
+            left top,
+            right top,
+            from(#33b6d8),
+            to(#33b6d8),
+            color-stop(0.3, #b2f3e0));
+    background: -moz-gradient(linear,
+            left top,
+            right top,
+            from(#33b6d8),
+            to(#33b6d8),
+            color-stop(0.3, #b2f3e0));
+    background: gradient(linear,
+            left top,
+            right top,
+            from(#33b6d8),
+            to(#33b6d8),
+            color-stop(0.3, #b2f3e0));
     -webkit-background-size: 70px 100%;
     -moz-background-size: 70px 100%;
     background-size: 70px 100%;
