@@ -1,4 +1,5 @@
-"use client";
+// Statements.js
+
 import React, { useEffect, useState } from "react";
 import ProblemStatement from "./PScard";
 import { useSession } from "next-auth/react";
@@ -18,8 +19,8 @@ function Statements() {
     useEffect(() => {
         // Real-time database listener to fetch selectedPS
         if (session.user && session.user.teamId) {
-            const teamId = session.user.teamId;
-            const selectedPSRef = ref(database, `Teams/${teamId}/S`);
+            const tId = session.user.teamId;
+            const selectedPSRef = ref(database, `Teams/${tId}/S`);
 
             onValue(selectedPSRef, (snapshot) => {
                 const selectedPS = snapshot.val();
@@ -55,7 +56,7 @@ function Statements() {
                     }
 
                     if (
-                        ps.count <= 4 &&
+                        ps.count <= 5 &&
                         !ps.teamIds.includes(session.user.teamId)
                     ) {
                         ps.teamIds.push(session.user.teamId);

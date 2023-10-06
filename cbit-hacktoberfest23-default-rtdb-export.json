@@ -1,0 +1,58 @@
+{
+  "ProblemStatements": {
+    "PS1": {
+      "count": 0,
+      "teamIds": [
+        0
+      ]
+    },
+    "PS2": {
+      "count": 0,
+      "teamIds": [
+        0,
+        9
+      ]
+    },
+    "PS3": {
+      "count": 2,
+      "teamIds": [
+        0
+      ]
+    },
+    "PS4": {
+      "count": 1,
+      "teamIds": [
+        0,
+        2
+      ]
+    },
+    "PS5": {
+      "count": 0,
+      "teamIds": [
+        0
+      ]
+    }
+  },
+  "Teams": [
+    null,
+    {
+      "S": "PS3"
+    },
+    {
+      "S": "PS4"
+    },
+    null,
+    null,
+    null,
+    null,
+    {
+      "S": "0"
+    },
+    {
+      "S": "0"
+    },
+    {
+      "S": "0"
+    }
+  ]
+}
