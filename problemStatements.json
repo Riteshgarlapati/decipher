@@ -1,27 +1,227 @@
 [
     {
         "Id": "PS1",
-        "statement": "Problem Statement-1",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "statement": "Hostel Management System.",
+        "description": "Build a comprehensive website for a hostel franchise across India, offering user registration, authentication, and profile management. The site should showcase hostel facilities and features. Provide a food menu section, a complete support system with ticket-raising capabilities, and account details, including payment options. Implement a referral program where users can refer friends and earn rewards with bank details collected during registration. Include a secure payment gateway for convenience. "
     },
     {
         "Id": "PS2",
-        "statement": "Problem Statement-2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "statement": "Healthcare Practice Management System.",
+        "description": "Create an efficient online health practice management website for doctors and patients. Users can register or log in with their credentials to access their profiles. Key features include appointment scheduling for both doctors and patients, the ability for doctors to upload X-rays and files, and the ability for patients to view them. The platform should also facilitate treatment planning by offering alternatives, cost estimates, and bill generation. This process should be seamless for both doctors and patients."
     },
     {
         "Id": "PS3",
-        "statement": "Problem Statement-3",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "statement": "online CookBook. (BEGINNER)",
+        "description": "Build a standout cooking recipe website with a user-friendly search engine, enabling recipe searches by keywords. Include an ingredient-based search feature, displaying recipes that can be made with available ingredients and sorting them by increasing the number of missing items. Categorize recipes by cuisine, cost, and preparation time. Prioritize an exceptional UI/UX design for an overall engaging user experience."
     },
     {
         "Id": "PS4",
-        "statement": "Problem Statement-4",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "statement": "Password Manager ",
+        "description": "Create a basic password manager that can store passwords and emails and encrypt them. Remembers given passwords and emails, with login and session functionality. Database integration and encryption of all passwords and data.Remember given passwords and emails with login, session, and generate a random password with given criteria (such as allowed characters, length, etc.)"
     },
     {
         "Id": "PS5",
-        "statement": "Problem Statement-5",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        "statement": "SQL Injection Prevention System for Web Apps ",
+        "description": "Developing an adaptive SQL injection prevention system for web applications is essential for robust security. This system should effectively detect and block injection attempts while minimizing false positives and negatives. It should seamlessly integrate with various technology stacks, ensuring compliance and offering performance optimization. Additionally, it must be developer-friendly and cost-effective. To achieve this, the system should implement input filtering to block malicious SQL code, tighten database access controls, utilize prepared statements and parameterized queries, and validate user inputs through whitelisting or allow lists. This comprehensive approach safeguards against SQL injection attacks and maintains the integrity of web application data."
+    },
+    {
+        "Id": "PS6",
+        "statement": "Movie Recommender System (BEGINNER)",
+        "description": "The objective of this project is to design and implement a movie recommender system that leverages user input to suggest movies tailored to individual preferences. The system should take into account various factors such as genre, user ratings, and viewing history to generate relevant movie recommendations."
+    },
+    {
+        "Id": "PS7",
+        "statement": "Calorie Tracker (BEGINNER)",
+        "description": "Develop a cutting-edge mobile or web application to address the pressing need for effective calorie intake monitoring and personalized diet recommendations. A robust calorie tracking system to simplify daily intake monitoring, the capability to generate customized diet plans tailored to individual goals and preferences, and the ability to conduct comprehensive nutritional analysis for users, empowering them with insights to make informed dietary choices"
+    },
+    {
+        "Id": "PS8",
+        "statement": "Facial Attendance.",
+        "description": "Create an advanced facial attendance system that can work with any LMS platform, like MyCamu. This system will make it easy to track attendance using facial recognition technology, ensuring that attendance records are accurate and can seamlessly fit into any school's digital system."
+    },
+    {
+        "Id": "PS9",
+        "statement": "Resume Evaluator.",
+        "description": "Develop a website that evaluates resumes for a specific job role and provides a score based on the match between the resume and the job requirements Employers often receive a large number of resumes, making it crucial for candidates to stand out. This website aims to help job seekers by providing them with a resume score that reflects how well their resume matches the requirements of a particular job role using AI."
+    },
+    {
+        "Id": "PS10",
+        "statement": "Automated Port Scanner",
+        "description": "Design an AI-powered port scanning solution to enhance network security and monitoring by automating the process of identifying open ports and potential vulnerabilities within a network infrastructure. This tool will quickly find open ports and potential weaknesses in a network, helping to spot threats in real-time and improve defense against cyberattacks."
+    },
+    {
+        "Id": "PS11",
+        "statement": "Accounting chatbot",
+        "description": "The challenge at hand is to develop an accounting chatbot with the capability to address fundamental accounting queries, interface with databases or Excel sheets for mathematical accounting calculations, and perform data analysis along with graph plotting on uploaded accounting data spreadsheets. This chatbot should be intended to offer comprehensive assistance in accounting tasks, aiding users in making well-informed financial decisions effectively."
+    },
+    {
+        "Id": "PS12",
+        "statement": "Blockchain-based healthcare record repository",
+        "description": "Developing a blockchain-based healthcare record repository to enhance security, efficiency, and interoperability in managing sensitive medical information. This project aims to create a highly secure digital storage system for healthcare records using blockchain technology. In the healthcare industry, it's crucial to keep sensitive medical information safe and easy to access. The usual ways of keeping records have problems like being inefficient, not very secure, and not working well with other systems. To overcome these big problems, this project wants to use the super strong security and unchangeable features of blockchain technology."
+    },
+    {
+        "Id": "PS13",
+        "statement": "Neighborhood Safety Network platform to empower residents in enhancing community safety.",
+        "description": "Develop an online platform that enables residents to report safety incidents, receive real-time safety alerts, communicate with neighbors, and collaborate with local law enforcement. This platform should facilitate residents in reporting safety incidents, staying updated with real-time safety alerts, communicating with neighbors, and coordinating with local law enforcement. Key features include incident reporting, safety alerts, community chat, community engagement, safety resources, and integration with law enforcement. This platform aims to enhance community safety and connectivity."
+    },
+    {
+        "Id": "PS14",
+        "statement": "Mental Wellness Check-In App",
+        "description": "Create a user-friendly mobile app that encourages regular emotional self-assessment. This app should provide self-assessment questionnaires, mindfulness exercises, and access to local mental health resources. The goal is to encourage regular emotional self-assessment and enhance mental well-being. Key features should include progress tracking, reminders, privacy, and security measures."
+    },
+    {
+        "Id": "PS15",
+        "statement": "Grocery List app (BEGINNER)",
+        "description": "Create a mobile app that simplifies grocery shopping, offering features for easy list creation, deal finding, and purchase organization to save users time and money. This app should enable users to create smart shopping lists, find nearby stores efficiently, and compare prices effectively. Such a solution aims to save users valuable time and money, enhancing their grocery shopping experience."
+    },
+    {
+        "Id": "PS16",
+        "statement": "Social Media Dashboard (BEGINNER)",
+        "description": "Create a social media dashboard that aggregates content from multiple social media platforms. Users should be able to view and interact with their social media feeds through a single interface. Use APIs provided by social media platforms."
+    },
+    {
+        "Id": "PS17",
+        "statement": "Task Management Application (BEGINNER)",
+        "description": "Create a web application that allows users to create, edit, and delete tasks, set due dates, and mark tasks as completed. It features a secure user authentication system to provide personalized task lists for each user, ensuring data privacy. The user-friendly interface is designed to help users easily organize and manage their tasks, while responsive design ensures compatibility across various devices."
+    },
+    {
+        "Id": "PS18",
+        "statement": "Document Categorization and Adaptive Summarization",
+        "description": "Implement a robust document categorization module within the Text Summarization application. This module will automatically classify input documents into predefined categories, such as scientific, legal, news, academic, technical, and more. The categorization process will be leveraged to adapt the summarization approach, optimizing the quality and relevance of generated summaries for different document types."
+    },
+    {
+        "Id": "PS19",
+        "statement": "Online Survey and Feedback Platform (BEGINNER)",
+        "description": "Create a user-friendly online survey platform as a mobile app or web app. Ensure it's fast, secure, and accessible to all. Allow users to personalize surveys, collaborate seamlessly, and use it on mobile devices. Offer various feedback collection methods, and strict compliance with regulations."
+    },
+    {
+        "Id": "PS20",
+        "statement": "Volunteer Finder (BEGINNER)",
+        "description": "Developing a web app or mobile application to efficiently streamline the process of finding volunteer opportunities is a pressing need. Many potential volunteers struggle to identify suitable roles that align with their interests, skills, and availability. This inefficiency often hinders community engagement and social impact efforts. Therefore, creating a user-friendly platform that simplifies volunteer opportunity discovery, facilitates connections with organizations, and tracks volunteer hours is crucial to empowering individuals to make a positive difference in their communities."
+    },
+    {
+        "Id": "PS21",
+        "statement": "Multilingual Handwritten Text Recognition using Machine Learning",
+        "description": "The objective of this project is to design and implement a highly versatile Handwritten Text Recognition (HTR) model capable of accurately recognizing and transcribing handwritten text in multiple languages. This advanced HTR system aims to convert diverse handwritten documents from various linguistic backgrounds into machine-readable digital text. The technology is indispensable for digitizing a wide range of handwritten materials, including historical manuscripts, contemporary documents, and personal notes. By accommodating multiple languages, this project facilitates cross-cultural data digitization, accessibility, and preservation, addressing a global need for diverse language support."
+    },
+    {
+        "Id": "PS22",
+        "statement": "Events Management System",
+        "description": "Developing an interactive and user-friendly web or mobile app for college student clubs to promote their events and activities is essential to enhancing their visibility and engagement within the college community. This platform aims to provide a seamless experience for club representatives and potential attendees. The website should contain a system where clubs can create accounts, undergo a verification process through social media handles or other means to ensure authenticity, and then efficiently manage and promote their events. The website should offer easy event creation and editing capabilities, allowing clubs to provide comprehensive event details and updates."
+    },
+    {
+        "Id": "PS23",
+        "statement": "Integrated Complaint Tracking System",
+        "description": "Create a web app or mobile app where citizens can easily report complaints related to government services like water,electricity, sewage,etc. The website should allow people to submit complaints easily, and the complaints should be automatically assigned to the respective government departments. The website should also provide real-time updates on the status and progress of the complaints."
+    },
+    {
+        "Id": "PS24",
+        "statement": "Expense Tracker Web app / Mobile app (BEGINNER)",
+        "description": "Create an app that helps users manage their personal finances, including expense tracking, budgeting, and financial goal setting. This app should provide essential features like expense tracking, allowing users to gain clarity on their spending habits. The app must also offer budget management capabilities, enabling users to create and maintain financial plans, and it should also allow users to set limitations on expenses within specific timeframes. Also category breakdowns of income and expenses to gain insights into their financial patterns."
+    },
+    {
+        "Id": "PS25",
+        "statement": "Farmer's Connect ",
+        "description": "Develop a comprehensive mobile and web application solution that empowers farmers by providing a seamless interface for seeking advice from agricultural experts, sharing information with middlemen, and accessing valuable resources such as weather forecasts and market insights. This platform aims to bridge the gap between expertise and on-field implementation, foster knowledge exchange, and enhance agricultural productivity for farmers."
+    },
+    {
+        "Id": "PS26",
+        "statement": "Digital Platform for Proper Recycling of plastic and other wastes (BEGINNER)",
+        "description": "Create a platform that bridges the gap between users seeking convenient plastic disposal solutions, local recycling centers ready to process plastics, and a network of volunteer collectors willing to facilitate the pickup process. The platform should prioritize user-friendliness, secure data management, and transparent communication to encourage responsible plastic waste management while promoting community engagement in recycling efforts.        "
+    },
+    {
+        "Id": "PS27",
+        "statement": "Community Food Redistribution Platform",
+        "description": "Build a web platform that connects local grocery stores, restaurants, and households with surplus food to nearby food banks and shelters. Users should be able to post available food items, and the system should facilitate pickups or deliveries. This project involves user registration, geolocation, and inventory management."
+    },
+    {
+        "Id": "PS28",
+        "statement": "Domestic Violence Support System",
+        "description": "Develop a secure and anonymous mobile app or Web app designed to support individuals experiencing domestic violence. The application includes features such as anonymous user profiles, a comprehensive resource database with legal, medical, and counseling information, a secure and private messaging system, emergency alert functionality with location tracking, and the ability for users to create safety plans tailored to their specific situations."
+    },
+    {
+        "Id": "PS29",
+        "statement": "Stock Price Prediction ",
+        "description": "Develop a stock price prediction website that uses historical stock price data to forecast the future price of a selected stock. The website should provide a basic interface for users to input a stock symbol, retrieve historical data, and display a simple price prediction based on a basic algorithm or moving averages."
+    },
+    {
+        "Id": "PS30",
+        "statement": "DSA Problems Tracker ",
+        "description": "Create a web app or mobile app where the questions are divided into different sets of categories, and you can have a checklist of what needs to be done and what is completed. You will need to create a roadmap for beginners depending on their skills, how much they know, and how much they will have to learn. Also, creating topic-wise progress for each user profile would be helpful for the users to track their personal progress."
+    },
+    {
+        "Id": "PS31",
+        "statement": "Online Auction System (BEGINNER)",
+        "description": "Create a website for an auction system where buyers and sellers engage in transactional business where buyers purchase items through price bidding. The creation of separate profiles for buyers and sellers is mandatory. Maintain a record of each item in a database, which should be delivered to a certain address upon winning that item. Verification must be thorough to eliminate the risk of fraud."
+    },
+    {
+        "Id": "PS32",
+        "statement": "Collaborative Whiteboard Web or Mobile Application for Teams",
+        "description": "The web application will allow users to collaborate in real-time and create boards where they can add notes and ideas. The application will include whiteboard tools that allow users to draw, add shapes, type text, and insert sticky notes. Users should be able to organize their ideas and projects into visual boards and share them with others."
+    },
+    {
+        "Id": "PS33",
+        "statement": "Real Time weather monitoring System ",
+        "description": "Build a web-based or mobile app that provides real-time weather updates for a user's current location. Users should be able to check the current weather conditions, receive forecasts, and get weather alerts if severe conditions are expected."
+    },
+    {
+        "Id": "PS34",
+        "statement": "E-commerce Price Comparison Tool",
+        "description": "Build a web-based tool that allows users to compare the prices of products across multiple e-commerce websites. The tool should provide price history, reviews, and recommendations to help users make informed purchase decisions."
+    },
+    {
+        "Id": "PS35",
+        "statement": "Pet Adoption Platform ",
+        "description": "Develop a platform aimed at enhancing the adoption experience for both adopters and rescue animals, effectively matching potential pet adopters with suitable companion animals, such as dogs and cats, and facilitating the adoption process."
+    },
+    {
+        "Id": "PS36",
+        "statement": "College Sport Resource Booking Application",
+        "description": "An application where students can book sports equipment and specify the number of items needed and at what time would be helpful. The request will be sent to the admin. Admins can view the requests for sports equipment and accept or reject them based on availability. If the sports equipment is available, the student can collect it manually from the sports block."
+    },
+    {
+        "Id": "PS37",
+        "statement": " An Organ Donation Awareness and Solution Website",
+        "description": "Develop a streamlined organ donation website to alleviate the critical organ shortage and reduce waiting list times. Users can easily register as potential donors, and the platform will ensure fair and efficient donor-recipient matches. Detailed information about organ donation will be available, and various guidelines and procedures will be conducted alongside rigorous privacy and security safeguards."
+    },
+    {
+        "Id": "PS38",
+        "statement": "Elderly Care and Assistance App ",
+        "description": "Create a mobile app that connects caregivers with elderly individuals who need assistance with daily tasks. The app should include features for scheduling, communication, medication reminders, and emergency alerts."
+    },
+    {
+        "Id": "PS39",
+        "statement": " Music Player App (BEGINNER)",
+        "description": "Creating a music player app, for either mobile or desktop, involves incorporating key features such as playing various audio formats, easy navigation, efficient library management, playback control, shuffle and repeat options, a user-friendly interface, performance optimization, cross-platform compatibility, error handling, and data security."
+    },
+    {
+        "Id": "PS40",
+        "statement": "Sustainable Gardening Community Hub",
+        "description": "Design and develop a Web app or mobile app platform that serves as a hub for gardening enthusiasts and promotes sustainable gardening practices. This platform must enable users to share their gardening tips and resources, facilitate seed exchange and trading, offer virtual garden tours featuring 360° photos, and provide an eco-score system to assess and promote garden sustainability. The primary goal is to create an engaging and informative community for gardeners, foster eco-friendly practices, and connect like-minded individuals who are passionate about sustainable gardening."
+    },
+    {
+        "Id": "PS41",
+        "statement": "Alumni Tracking System",
+        "description": "Develop a web-based Alumni Tracking System for educational institutions. Alumni should register, create profiles, and update their job placement information. Users can search for alumni by name, graduation year, or major. Admins manage data, send updates, and monitor user-generated content. Ensure data privacy and security compliance. Report alumni engagement and job placements."
+    },
+    {
+        "Id": "PS42",
+        "statement": "Flight Frequency Visualization App",
+        "description": "Build a user-friendly app for web, mobile, or desktop that lets users explore global flight frequency between airports visually. Users can select airports, see flight connections displayed as lines or animations, and filter results. The app should offer real-time data, educational content, and customization options, making it accessible on various devices. The goal is to provide an engaging and informative tool for understanding global flight patterns."
+    },
+    {
+        "Id": "PS43",
+        "statement": "A virtual event platform for hosting webinars, conferences, and workshops, with registration and payment processing features",
+        "description": "Creating a virtual event platform for webinars, conferences, and workshops with compulsory registration and optional payment processing aims to offer flexibility. It prioritizes efficient event management through mandatory registration while providing the choice of payment processing for event monetization. This user-friendly platform caters to diverse virtual event needs, benefiting both organizers and participants."
+    },
+    {
+        "Id": "PS44",
+        "statement": "Fake News Detection System",
+        "description": "Develop an AI-powered Fake News Detection System that analyzes news articles and social media content for credibility and accuracy. The system will employ natural language processing and machine learning techniques to assess linguistic patterns, fact-check sources, and detect misinformation. Users can submit articles or links for analysis, and the system will provide a credibility score or flag potentially fake content. It will also maintain a database of known fake news sources and update it regularly. The aim is to empower users to make informed decisions about the information they consume and share while combating the spread of false information in the digital age"
+    },
+    {
+        "Id": "PS45",
+        "statement": " Student Activity Tracker",
+        "description": "The objective of the project is to create a mobile or web application for students to track their activity points by uploading certificates and obtaining mentor approval. Additionally, the application will include a digital student mentoring diary where students will be required to fill out response forms provided by their mentors. Mentors will have the ability to track these diaries."
     }
 ]
