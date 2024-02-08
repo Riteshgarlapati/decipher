@@ -34,68 +34,26 @@ const Navbar = ({ session }) => {
                     zIndex: 20,
                 }}>
                 <div className="flex items-center">
-                    <Link
-                        href="/"
-                        className="flex items-center ">
-                        <Image
-                            src="/images/hf10iconCrop.png" // Replace with your logo image path
-                            width={51}
-                            height={45}
-                            alt="Hf10 Logo"
-                            style={{ padding: 0, scale: 1.0 }}
-                        />
-                        <div className="w-[1px] h-5 bg-[#efedef] mx-2"></div>
-                        <div className="relative w-10 h-10">
-                            {isSticky ? (
-                                <div>
-                                    <Image
-                                        src="/images/LogoCOSCRing.svg" // Replace with your logo image path
-                                        layout="fill"
-                                        alt="Sticky Logo"
-                                        style={{
-                                            transition:
-                                                "opacity 0.3s ease-in-out",
-                                            opacity: 1,
-                                        }}
-                                    />
-                                    <Image
-                                        src="/images/LogoCOSC.png" // Replace with your logo image path
-                                        layout="fill"
-                                        alt="Normal Logo"
-                                        style={{
-                                            transition:
-                                                "opacity 0.3s ease-in-out",
-                                            opacity: 0,
-                                        }}
-                                    />
-                                </div>
-                            ) : (
-                                <div>
-                                    <Image
-                                        src="/images/LogoCOSCRing.svg" // Replace with your logo image path
-                                        layout="fill"
-                                        alt="Sticky Logo"
-                                        style={{
-                                            transition:
-                                                "opacity 0.3s ease-in-out",
-                                            opacity: 0,
-                                        }}
-                                    />
-                                    <Image
-                                        src="/images/LogoCOSC.png" // Replace with your logo image path
-                                        layout="fill"
-                                        alt="Normal Logo"
-                                        style={{
-                                            transition:
-                                                "opacity 0.3s ease-in-out",
-                                            opacity: 1,
-                                        }}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    </Link>
-                </div>
+          <Link
+            href="/"
+            className="flex items-center ">
+            <Image
+              src="/images/LogoCOSC.png" // Replace with your logo image path
+              width={51}
+              height={45}
+              alt="Hf10 Logo"
+              style={{ padding: 0, scale: 1.0 }}
+            />
+            <div className="w-[1px] h-5 bg-[#efedef] mx-2"></div>
+            <Image
+              src="/images/openSysLogo.png" // Replace with your logo image path
+              width={51}
+              height={45}
+              alt="Hf10 Logo"
+              style={{ padding: 0, scale: 1.0 }}
+            />
+          </Link>
+        </div>
                 <div className="">
                     {session ? (
                         <button

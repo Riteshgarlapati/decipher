@@ -9,8 +9,8 @@ const jetBrains_mono = JetBrains_Mono({
 });
 
 export const metadata = {
-    title: "Hacktoberfest'23 | Problem Selection  | COSC",
-    description: "CBIT Hacktoberfest Hackathon 2023",
+    title: "Decipher | OpenSys'24 | COSC",
+    description: "COSC OpenSys'24",
 };
 
 export default function RootLayout({ children }) {
